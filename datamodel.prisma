@@ -1,0 +1,13 @@
+type User {
+  id: ID! @id
+  fullName: String!
+  times: [Time!]! @relation(link: INLINE)
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+}
+
+type Time @embedded {
+  id: ID! @id
+  hour: Int!
+  minute: Int!
+}
